@@ -1,0 +1,146 @@
+:root {
+  --sea: #0b2a4a;
+  --teal: #1f7a8c;
+  --foam: #eaf4f2;
+  --sun: #f2b632;
+  --coral: #d9483b;
+  --ink: #12263a;
+}
+
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: var(--foam);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+h1, h2 { font-family: "Pirata One", serif; font-weight: 400; }
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem 8rem;
+  background: linear-gradient(var(--sea), var(--teal));
+  color: #fff;
+  overflow: hidden;
+}
+.hero h1 { font-size: clamp(3.5rem, 11vw, 8rem); line-height: 1; color: var(--sun); letter-spacing: 2px; }
+.hero p { max-width: 46ch; margin: 1rem 0 1.8rem; font-size: 1.15rem; }
+
+.btn {
+  background: var(--sun);
+  color: var(--sea);
+  font-weight: 700;
+  padding: .8rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform .2s;
+}
+.btn:hover, .btn:focus-visible { transform: scale(1.06); }
+
+.ship { width: 110px; margin-top: 2rem; animation: bob 4s ease-in-out infinite; }
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+.waves { position: absolute; bottom: -1px; left: 0; width: 200%; height: 110px; }
+.w1 { fill: var(--foam); }
+.w2 { fill: var(--foam); opacity: .5; }
+.w1 { animation: wave 14s linear infinite; }
+.w2 { animation: wave 9s linear infinite reverse; }
+@keyframes wave { to { transform: translateX(-50%); } }
+
+/* SEÇÕES */
+section { max-width: 1050px; margin: 0 auto; padding: 4rem 1.5rem; }
+section h2 { font-size: 2.6rem; color: var(--sea); margin-bottom: 1.5rem; }
+
+/* FILTROS */
+.filters { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.5rem; }
+.filters button {
+  font: inherit;
+  font-weight: 700;
+  padding: .45rem 1.1rem;
+  border: 2px solid var(--sea);
+  background: transparent;
+  color: var(--sea);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.filters button[aria-pressed="true"] { background: var(--sea); color: #fff; }
+
+/* CARDS */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.2rem; }
+.card {
+  font: inherit;
+  text-align: center;
+  background: #fff;
+  border: 2px solid var(--sea);
+  border-radius: 6px;
+  padding: 1.4rem 1rem;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+.card:hover, .card:focus-visible { transform: rotate(-1.5deg) translateY(-4px); box-shadow: 6px 6px 0 var(--sun); }
+.avatar {
+  width: 84px; height: 84px;
+  margin: 0 auto .8rem;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: "Pirata One", serif;
+  font-size: 2.6rem;
+  color: #fff;
+}
+.card h3 { font-size: 1.15rem; }
+.card span { font-size: .9rem; color: var(--teal); font-weight: 700; }
+
+/* MODAL */
+dialog {
+  margin: auto;
+  width: min(460px, 90vw);
+  border: 3px solid var(--sea);
+  border-radius: 6px;
+  padding: 2rem;
+  background: #fff;
+}
+dialog::backdrop { background: rgba(11, 42, 74, .7); }
+dialog h3 { font-family: "Pirata One", serif; font-size: 2.2rem; color: var(--coral); font-weight: 400; }
+dialog dt { font-weight: 700; margin-top: .8rem; color: var(--teal); }
+dialog dd { margin: 0; }
+.close { position: absolute; top: .5rem; right: .9rem; font-size: 2rem; background: none; border: 0; cursor: pointer; }
+
+/* QUIZ */
+#quiz { background: var(--sea); max-width: none; color: #fff; }
+#quiz > * { max-width: 700px; margin-left: auto; margin-right: auto; }
+#quiz h2 { color: var(--sun); }
+.q-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
+.opts { display: grid; gap: .7rem; }
+.opts button, .again {
+  font: inherit;
+  text-align: left;
+  padding: .9rem 1.2rem;
+  border: 2px solid var(--sun);
+  background: transparent;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.opts button:hover, .opts button:focus-visible, .again:hover { background: var(--sun); color: var(--sea); }
+.progress { height: 6px; background: #ffffff33; border-radius: 3px; margin-bottom: 1.5rem; }
+.progress i { display: block; height: 100%; background: var(--sun); border-radius: 3px; transition: width .3s; }
+.result h3 { font-family: "Pirata One", serif; font-size: 3rem; font-weight: 400; color: var(--sun); }
+
+footer { text-align: center; padding: 2rem 1.5rem; font-size: .85rem; color: var(--sea); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

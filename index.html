@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grand Line Log | fã-site de One Piece</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>Grand Line Log</h1>
+    <p>Diário de bordo de um fã: conheça a tripulação e descubra quem você seria no navio.</p>
+    <a class="btn" href="#tripulacao">Zarpar</a>
+
+    <svg class="ship" viewBox="0 0 120 110" aria-hidden="true">
+      <rect x="58" y="8" width="4" height="70" fill="#5b3a1e"/>
+      <path d="M62 14 Q100 40 62 70 Z" fill="#fff"/>
+      <path d="M58 24 Q28 44 58 66 Z" fill="#f4f4f4"/>
+      <polygon points="62,8 62,20 76,14" fill="#d9483b"/>
+      <path d="M10 78 H110 Q100 102 80 102 H40 Q20 102 10 78 Z" fill="#8a5a2b"/>
+      <rect x="10" y="74" width="100" height="6" fill="#5b3a1e"/>
+    </svg>
+
+    <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path class="w1" d="M0 60 Q90 20 180 60 T360 60 T540 60 T720 60 T900 60 T1080 60 T1260 60 T1440 60 V120 H0Z"/>
+      <path class="w2" d="M0 80 Q90 50 180 80 T360 80 T540 80 T720 80 T900 80 T1080 80 T1260 80 T1440 80 V120 H0Z"/>
+    </svg>
+  </header>
+
+  <main>
+    <section id="tripulacao">
+      <h2>A tripulação</h2>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section id="quiz">
+      <h2>Quem você seria no navio?</h2>
+      <div id="quiz-box"></div>
+    </section>
+  </main>
+
+  <dialog id="modal">
+    <button class="close" id="close" aria-label="Fechar">×</button>
+    <div id="modal-body"></div>
+  </dialog>
+
+  <footer>
+    Fã-site sem fins lucrativos, feito para estudo. One Piece é criação de Eiichiro Oda (Shueisha / Toei Animation). Nenhuma imagem oficial é usada aqui.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
